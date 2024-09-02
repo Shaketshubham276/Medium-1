@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://Startingneon_owner:ARtugQl36zmn@ep-autumn-mud-a1bvztqd.ap-southeast-1.aws.neon.tech/prisma_migrate_shadow_db_d3b97bbf-874e-4f05-ac55-2b12dc2b807a?sslmode=require"
+}
+
+model User {
+  id       Int   @id @default(autoincrement())
+  username    String   @unique
+  name     String?
+  password String
+  blogs    Blog[]
+}
+
+model Blog {
+  id        Int   @id @default(autoincrement())
+  title     String
+  content   String
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+} 
