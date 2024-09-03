@@ -1,0 +1,1 @@
+export const BACKEND_URL="https://backend.shaketshubham276.workers.dev"
