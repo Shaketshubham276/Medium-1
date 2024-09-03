@@ -1,0 +1,11 @@
+{
+    "rewrites": [
+      { "source": "/old-path", "destination": "/new-path" }
+    ],
+    "redirects": [
+      { "source": "/old-url", "destination": "/new-url", "statusCode": 301 }
+    ],
+    "headers": [
+      { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "max-age=0, s-maxage=86400" }] }
+    ]
+  }
